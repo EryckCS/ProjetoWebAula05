@@ -25,7 +25,8 @@
                 <i>Machine Learning</i> podem utilizar exemplos para construir modelos capazes de realizar determinadas
                 tarefas.<br>
                 Em um programa tradicional, normalmente são desenvolvidas regras que determinam como o software deve
-                reagir às informações recebidas. Em </i>Machine Learning</i>, o funcionamento pode ser diferente. O sistema
+                reagir às informações recebidas. Em </i>Machine Learning</i>, o funcionamento pode ser diferente. O
+                sistema
                 recebe dados durante uma etapa chamada treinamento e utiliza essas informações para ajustar seus
                 parâmetros internos. Esses parâmetros representam parte do conhecimento adquirido pelo modelo e são
                 utilizados posteriormente para produzir resultados quando novos dados são apresentados.<br>
@@ -45,8 +46,225 @@
                 previsão de demanda, processamento de textos e análise de grandes conjuntos de informações.<br>
                 Existem diferentes maneiras de realizar o aprendizado de um modelo. A escolha depende principalmente do
                 problema que precisa ser resolvido e dos dados disponíveis. Entre as principais categorias estão o
-                aprendizado supervisionado, o aprendizado não supervisionado e o aprendizado por reforço.</p>
+                aprendizado supervisionado, o aprendizado não supervisionado e o aprendizado por reforço.
+            </p>
+
+            <figure>
+                <img src="../image/machinelearningetapas.png" alt="Etapas" width="700" height="400">
+                <figcaption><i>Dados → Treinamento → Modelo → Novos dados → Resultado</i></figcaption>
+            </figure>
         </section>
+
+        <br>
+
+        <section>
+            <h2>Aprendizado Supervisionado</h2>
+            <p>O aprendizado supervisionado é uma das principais formas de treinamento utilizadas em <i>Machine
+                    Learning</i>.
+                Nesse método, o modelo aprende utilizando exemplos que possuem uma resposta conhecida. Os dados de
+                treinamento contêm informações de entrada associadas aos resultados esperados, geralmente chamados de
+                rótulos.<br>
+                Podemos imaginar um sistema desenvolvido para identificar mensagens de spam. Para treiná-lo, seria
+                possível utilizar uma coleção de mensagens que já foram previamente classificadas como “spam” ou “não
+                spam”. O algoritmo analisa as características presentes nesses exemplos e tenta encontrar padrões que
+                ajudem a distinguir as duas categorias.<br>
+                Depois do treinamento, o modelo pode receber uma nova mensagem que não fazia parte dos exemplos
+                utilizados anteriormente. Utilizando os padrões aprendidos, ele calcula qual classificação parece mais
+                adequada para aquela mensagem.<br>
+                Outro exemplo seria um sistema desenvolvido para reconhecer animais em fotografias. Durante o
+                treinamento, poderiam ser fornecidas diversas imagens acompanhadas de informações indicando qual animal
+                aparece em cada uma. Ao analisar muitos exemplos, o modelo pode aprender características úteis para
+                posteriormente tentar classificar novas imagens.<br>
+                Existem dois tipos de problemas muito comuns dentro do aprendizado supervisionado: classificação e
+                regressão. Na classificação, o objetivo é determinar a qual categoria uma informação pertence.
+                Identificar uma mensagem como spam ou não spam e reconhecer diferentes objetos em uma fotografia são
+                exemplos de classificação.<br>
+                Na regressão, o objetivo normalmente é estimar um valor numérico. Um modelo poderia analisar informações
+                sobre imóveis, como tamanho, localização, quantidade de quartos e características da propriedade, para
+                tentar estimar seu preço.<br>
+                O aprendizado supervisionado é utilizado em diversas aplicações porque muitos problemas podem ser
+                representados utilizando exemplos de entrada e resultados conhecidos. Entretanto, a obtenção de dados
+                corretamente classificados pode exigir bastante trabalho, especialmente quando milhares ou milhões de
+                exemplos precisam ser preparados para o treinamento.</p>
+
+            <ul>
+                <li>Classificação de imagens</li>
+                <li>Detecção de spam</li>
+                <li>Previsão de preços</li>
+                <li>Análise de documentos</li>
+                <li>Previsão de demanda</li>
+            </ul>
+        </section>
+
+        <br>
+
+        <section>
+            <h2>Aprendizado não supervisionado</h2>
+            <p>O aprendizado não supervisionado trabalha com dados que não possuem necessariamente respostas ou
+                categorias previamente definidas. Diferentemente do aprendizado supervisionado, no qual os exemplos
+                utilizados durante o treinamento possuem rótulos, aqui o algoritmo busca encontrar estruturas, relações
+                e padrões presentes nos próprios dados.<br>
+                Uma das técnicas mais conhecidas desse tipo de aprendizado é o agrupamento, também chamado de
+                <i>clustering</i>. O objetivo é identificar elementos que apresentam características semelhantes e
+                organizá-los
+                em grupos. Esses grupos não precisam ser definidos manualmente antes da análise.<br>
+                Imagine uma empresa que possui informações sobre milhares de clientes. Esses dados podem incluir
+                frequência de compras, valores gastos, tipos de produtos adquiridos e outras características. Em vez de
+                determinar previamente quais tipos de consumidores existem, um algoritmo de agrupamento pode analisar as
+                informações e encontrar grupos de clientes que apresentam comportamentos semelhantes.<br>
+                Depois dessa análise, a empresa poderia estudar as características encontradas em cada grupo para
+                compreender melhor diferentes padrões de comportamento. O algoritmo não necessariamente sabe o
+                significado de cada grupo; ele identifica relações matemáticas existentes entre os dados. A
+                interpretação dos resultados normalmente depende das pessoas responsáveis pela análise.<br>
+                Outra aplicação do aprendizado não supervisionado está relacionada à redução de dimensionalidade.
+                Grandes conjuntos de dados podem possuir centenas ou milhares de características diferentes. Algumas
+                técnicas permitem representar essas informações de maneira mais compacta, preservando características
+                consideradas importantes.<br>
+                O aprendizado não supervisionado pode ser especialmente útil durante a exploração de dados quando ainda
+                não sabemos exatamente quais padrões existem. Em vez de procurar apenas uma resposta previamente
+                determinada, os algoritmos podem ajudar a revelar estruturas que não seriam facilmente percebidas
+                através de uma análise manual.<br>
+                Por outro lado, avaliar os resultados pode ser mais difícil do que em problemas supervisionados. Como
+                não existe necessariamente uma resposta correta previamente definida, é importante analisar se os
+                padrões encontrados são realmente úteis para o objetivo da aplicação.
+            </p>
+            <figure>
+                <img src="../image/clustering.webp" alt="Clustering" width="500" height="300">
+                <figcaption><i>Clustering</i></figcaption>
+            </figure>
+        </section>
+
+        <br>
+
+        <section>
+            <h2>Aprendizado por reforço</h2>
+            <p>O aprendizado por reforço é uma abordagem de <i>Machine Learning</i> na qual um agente aprende através da
+                interação com um ambiente. Em vez de receber diretamente a resposta correta para cada situação, o agente
+                realiza ações e observa as consequências dessas decisões.<br>
+                Durante esse processo, determinadas ações podem gerar recompensas, enquanto outras podem resultar em
+                consequências menos favoráveis. Com o passar das interações, o agente utiliza essas experiências para
+                aprender uma estratégia que permita obter melhores resultados ao longo do tempo.<br>
+                Podemos imaginar um personagem controlado por inteligência artificial dentro de um jogo. Inicialmente, o
+                agente pode não saber quais ações são mais adequadas. Ele pode explorar diferentes possibilidades e
+                observar os resultados. Alcançar determinado objetivo pode gerar uma recompensa, enquanto uma ação que
+                prejudica seu progresso pode produzir uma recompensa menor ou uma penalidade.<br>
+                Depois de muitas interações, o sistema pode aprender quais ações apresentam maior possibilidade de
+                produzir bons resultados em diferentes situações. Esse processo não significa simplesmente memorizar
+                cada movimento individualmente. O objetivo é desenvolver uma política, ou seja, uma estratégia que
+                determine quais ações devem ser consideradas dependendo do estado atual do ambiente.<br>
+                Um dos desafios do aprendizado por reforço é equilibrar exploração e aproveitamento. O agente precisa
+                utilizar estratégias que já apresentaram bons resultados, mas também pode precisar experimentar novas
+                ações para descobrir alternativas melhores. Se apenas repetir aquilo que já conhece, talvez nunca
+                encontre uma estratégia superior. Por outro lado, explorar constantemente pode impedir que aproveite
+                aquilo que já aprendeu.<br>
+                O aprendizado por reforço é estudado em áreas como jogos, robótica, controle de sistemas e
+                otimização.<br>
+                Ele é especialmente interessante para problemas nos quais uma sequência de decisões influencia o
+                resultado final.<br>
+                Dessa forma, enquanto no aprendizado supervisionado existem exemplos com respostas conhecidas e no não
+                supervisionado o objetivo pode ser encontrar padrões sem rótulos, no aprendizado por reforço o
+                conhecimento é adquirido principalmente através das interações entre o agente e o ambiente.</p>
+
+            <figure>
+                <img src="../image/Reforço.png" alt="AprendizadoReforço" width="700" height="400">
+                <figcaption><i>Aprendizado por reforço</i></figcaption>
+            </figure>
+        </section>
+
+        <br>
+
+        <section>
+            <h2>Comparação dos tipos de Machine Learning</h2>
+
+            <table border="1">
+                <tr>
+                    <th>Tipo</th>
+                    <th>Como aprende</th>
+                    <th>Dados</th>
+                    <th>Objetivo</th>
+                    <th>Exemplo</th>
+                </tr>
+
+                <tr>
+                    <td><b>Supervisionado</b></td>
+                    <td>Aprende com exemplos conhecidos</td>
+                    <td>Dados rotulados</td>
+                    <td>Classificar ou prever</td>
+                    <td>Detectar spam</td>
+                </tr>
+
+                <tr>
+                    <td><b>Não supervisionado</b></td>
+                    <td>Encontra padrões</td>
+                    <td>Dados sem rótulos</td>
+                    <td>Descobrir estruturas</td>
+                    <td>Agrupar clientes</td>
+                </tr>
+
+                <tr>
+                    <td><b>Por reforço</b></td>
+                    <td>Interage com um ambiente</td>
+                    <td>Experiências e recompensas</td>
+                    <td>Aprender uma estratégia</td>
+                    <td>Agente em um jogo</td>
+                </tr>
+            </table>
+        </section>
+
+        <br>
+
+        <section>
+            <h2>Como funciona o treinamento de um modelo?</h2>
+            <p>O treinamento é uma das etapas mais importantes no desenvolvimento de um sistema de <i>Machine
+                    Learning</i>.
+                Antes de iniciar esse processo, normalmente é necessário obter os dados que serão utilizados pelo
+                modelo. Dependendo da aplicação, essas informações podem ser textos, imagens, números, registros de
+                sensores ou diversos outros tipos de dados.<br>
+                Depois da coleta, os dados geralmente passam por uma etapa de preparação. Informações incorretas,
+                duplicadas ou inadequadas podem precisar ser corrigidas ou removidas. Dependendo do problema, também
+                podem ser realizadas transformações para deixar os dados em um formato adequado para o algoritmo
+                escolhido.<br>
+                Em seguida, parte dos dados pode ser utilizada para o treinamento do modelo. Durante esse processo, o
+                algoritmo ajusta seus parâmetros buscando reduzir seus erros ou melhorar seu desempenho de acordo com
+                determinado objetivo.<br>
+                Entretanto, avaliar um modelo utilizando apenas os mesmos dados usados durante o treinamento pode
+                produzir uma impressão incorreta sobre seu desempenho. Por isso, normalmente são utilizados dados
+                separados para avaliar como o modelo se comporta diante de exemplos que não foram utilizados diretamente
+                para ajustar seus parâmetros.<br>
+                Após a avaliação, o modelo pode precisar passar por novos ajustes. Quando apresenta resultados
+                considerados adequados para a aplicação, ele pode ser integrado a um sistema para realizar previsões ou
+                outras tarefas utilizando novos dados.</p>
+
+            <ol>
+                <li>Coleta</li>
+                <li>Preparação</li>
+                <li>Treinamento</li>
+                <li>Avaliação</li>
+                <li>Utilização</li>
+            </ol>
+        </section>
+
+        <br>
+
+        <details>
+            <summary><b>Perguntas Frequentes</b></summary>
+            <ul>
+                <li><b><i>Machine Learning</i> é Inteligência Artificial?</b></li>
+                <p>Sim. Machine Learning é uma das áreas da Inteligência Artificial.</p>
+                <br>
+                <li><b><i>Machine Learning</i> e <i>Deep Learning</i> são iguais?</b></li>
+                <p>Não. <i>Deep Learning</i> é uma abordagem de <i>Machine Learning</i> baseada em redes neurais profundas.</p>
+                <br>
+                <li><b>Todo modelo precisa de muitos dados?</b></li>
+                <p>Não. A quantidade necessária depende do problema, do modelo e da qualidade dos dados.</p>
+                <br>
+                <li><b>O que são dados de treinamento?</b></li>
+                <p>São os dados utilizados pelo modelo durante o processo de aprendizado.</p>
+                <br>
+                <li><b>Um modelo pode cometer erros?</b></li>
+                <p>Sim. Modelos de <i>Machine Learning</i> podem produzir previsões ou classificações incorretas.</p>
+            </ul>
+        </details>
 
     </main>
 
@@ -62,9 +280,9 @@
                 <li><a href="../html/pagina2.html">Página 2 (O que é Engenharia de IA?)</a></li>
                 <li><a href="../html/pagina3.html">Página 3 (História da IA)</a></li>
                 <li><a href="../html/pagina4.html">Página 4 (O que é Machine Learning?)</a></li>
-                <li><a href="../html/pagina5.html">Página 5</a></li>
-                <li><a href="../html/pagina6.html">Página 6</a></li>
-                <li><a href="../html/pagina7.html">Página 7</a></li>
+                <li><a href="../html/pagina5.html">Página 5 (O que é Deep Learning?)</a></li>
+                <li><a href="../html/pagina6.html">Página 6 (O que são LLMs?)</a></li>
+                <li><a href="../html/pagina7.html">Página 7 (RAG e Bancos Vetoriais)</a></li>
                 <li><a href="../html/pagina8.html">Página 8</a></li>
                 <li><a href="../html/pagina9.html">Página 9</a></li>
                 <li><a href="../html/pagina10.html">Página 10</a></li>
