@@ -7,37 +7,93 @@
     <meta name="Author" content="Eryck Kayck">
     <meta name="description" content="Site educativo sobre Engenharia de IA">
     <meta http-equiv="content language" content="pt-br">
-    <title>Engenharia de IA</title>
+    <title>RAG e Bancos Vetoriais</title>
 </head>
 
 <body>
     <header>
-        <h1>Engenharia de <abbr title="Inteligência Artificial">IA</abbr></h1>
+        <h1>RAG e Bancos Vetoriais</abbr></h1>
     </header>
 
 
     <main>
-        <p>A Inteligência Artificial está cada vez mais presente no nosso cotidiano, sendo utilizada em áreas como
-            saúde, educação, indústria, segurança, entretenimento e tecnologia. Sistemas capazes de reconhecer imagens,
-            compreender textos, gerar conteúdos e auxiliar na tomada de decisões são alguns exemplos de aplicações que
-            utilizam <abbr title="Inteligência Artificial">IA</abbr>.</p>
-        <p>A Engenharia de Inteligência Artificial é a área responsável por projetar, desenvolver e implementar sistemas
-            que utilizam técnicas de <abbr title="Inteligência Artificial">IA</abbr> para resolver problemas. Ela
-            combina conhecimentos de programação, matemática, ciência de dados, aprendizado de máquina e engenharia de
-            software.</p>
-        <p>Neste site, você poderá conhecer os principais conceitos relacionados à Engenharia de <abbr
-                title="Inteligência Artificial">IA</abbr>, desde sua história e fundamentos até tecnologias como
-            <i>Machine Learning</i>, redes neurais, Inteligência Artificial Generativa, modelos de linguagem e sistemas
-            <i><abbr title="Retrieval-Augmented Generation">RAG</abbr></i>. Também serão apresentadas algumas das
-            ferramentas utilizadas por profissionais da área e exemplos de aplicações da <i><abbr title="Inteligência Artificial">IA</abbr></i> no mundo real.
-        </p>
-        <audio controls>
-            <source src="../audio/eng_ia.mp3" type="audio/mpeg">
-            Seu navegador não suporta audio.
-        </audio>
-        <p><b>Texto em audio</b></p>
+        <section>
+            <h2>O que é RAG?</h2>
+            <p><i>RAG</i> significa <i>Retrieval-Augmented Generation</i>, ou Geração Aumentada por Recuperação. É uma
+                abordagem que
+                permite combinar modelos generativos com a recuperação de informações provenientes de fontes
+                externas.<br>
+                Um modelo de linguagem possui conhecimentos e padrões adquiridos durante seu treinamento, mas pode não
+                possuir determinadas informações específicas, privadas ou recentes. Em um sistema <i>RAG</i>, documentos
+                ou
+                outras fontes podem ser consultados para encontrar informações relevantes antes da geração da
+                resposta.<br>
+                Imagine uma empresa que possui centenas de documentos internos. Quando uma pessoa realiza uma pergunta,
+                o sistema pode pesquisar quais partes desses documentos estão relacionadas ao assunto. Os trechos
+                encontrados são enviados ao modelo de linguagem juntamente com a pergunta.<br>
+                O modelo utiliza então essas informações como contexto para produzir sua resposta. Dessa maneira, é
+                possível desenvolver aplicações capazes de responder perguntas utilizando uma base de conhecimento
+                específica sem necessariamente treinar novamente todo o modelo para cada alteração nos documentos.</p>
+        </section>
+
+        <br>
+
+        <section>
+            <h2>Como funciona um sistema RAG?</h2>
+            <p>Um sistema <i>RAG</i> geralmente começa com a preparação dos documentos que formarão sua base de
+                conhecimento.
+                Documentos muito grandes podem ser divididos em partes menores, frequentemente chamadas de chunks.<br>
+                Esses trechos podem ser transformados em representações numéricas chamadas <i>embeddings</i>. Um
+                <i>embedding</i>
+                representa determinadas características do conteúdo em um espaço matemático, permitindo realizar
+                comparações entre informações.<br>
+                Quando um usuário realiza uma pergunta, ela também pode ser transformada em uma representação numérica.
+                O sistema procura então os trechos considerados mais relacionados à consulta.<br>
+                As informações recuperadas são adicionadas ao contexto enviado ao modelo de linguagem. O modelo recebe a
+                pergunta juntamente com esses trechos e gera uma resposta utilizando as informações fornecidas.<br>
+                Essa arquitetura permite separar a recuperação das informações da geração da resposta, possibilitando
+                atualizar a base documental sem necessariamente realizar um novo treinamento completo do modelo.</p>
+
+            <ol>
+                <li>Documentos</li>
+                <li>Chunks</li>
+                <li>Embeddings</li>
+                <li>Banco Vetorial</li>
+                <li>Pergunta</li>
+                <li>Busca</li>
+                <li>Trechos relevantes</li>
+                <li>LLM</li>
+                <li>Resposta</li>
+            </ol>
+        </section>
+
+        <br>
+
+        <section>
+            <h2>Bancos Vetoriais</h2>
+            <p>Bancos vetoriais são sistemas desenvolvidos para armazenar e pesquisar vetores, como os <i>embeddings</i>
+                utilizados em muitas aplicações de Inteligência Artificial.<br>
+                Em vez de realizar apenas uma busca baseada na correspondência exata de palavras, uma aplicação pode
+                comparar representações vetoriais para encontrar informações consideradas semelhantes de acordo com
+                determinado modelo de <i>embeddings</i>.<br>
+                Em uma aplicação <i>RAG</i>, o banco vetorial pode armazenar as representações dos trechos dos documentos.
+                Quando uma consulta é realizada, o sistema procura os vetores mais próximos da representação da pergunta
+                e recupera os conteúdos correspondentes.<br>
+
+                Esses conteúdos podem então ser fornecidos ao modelo de linguagem. Por isso, <i>embeddings</i>, recuperação de
+                informações e bancos vetoriais são componentes frequentemente encontrados na construção de aplicações
+                <i>RAG</i>.</p>
+        </section>
 
     </main>
+
+    <br>
+
+    <audio controls>
+        <source src="../audio/pagina7audio.mp3" type="audio/mpeg">
+        Seu navegador não suporta audio.
+    </audio>
+    <p><b>Texto em audio</b></p>
 
     <br>
 
@@ -54,9 +110,9 @@
                 <li><a href="../html/pagina5.html">Página 5 (O que é Deep Learning?)</a></li>
                 <li><a href="../html/pagina6.html">Página 6 (O que são LLMs?)</a></li>
                 <li><a href="../html/pagina7.html">Página 7 (RAG e Bancos Vetoriais)</a></li>
-                <li><a href="../html/pagina8.html">Página 8</a></li>
-                <li><a href="../html/pagina9.html">Página 9</a></li>
-                <li><a href="../html/pagina10.html">Página 10</a></li>
+                <li><a href="../html/pagina8.html">Página 8 (Ferramentas do Engenheiro de IA)</a></li>
+                <li><a href="../html/pagina9.html">Página 9 (Inteligência Artificial no Mundo Real)</a></li>
+                <li><a href="../html/pagina10.html">Página 10 (Quiz sobre Inteligência Artificial)</a></li>
             </ul>
         </details>
     </nav>
